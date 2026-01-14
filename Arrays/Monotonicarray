@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isMonotonic(int[] nums) {
+        int z=0;
+        int y=0;
+        int i;
+        for(i=0;i<nums.length-1;i++){
+            if(nums[i]<=nums[i+1]){
+                z++;}
+        
+            if(nums[i]>=nums[i+1]){
+                y++;}
+                }
+           
+        if (z==nums.length-1 || y==nums.length-1){
+            return true;
+        
+        }
+    return false;
+        
+    }
+}
