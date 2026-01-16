@@ -1,0 +1,38 @@
+class Solution {
+    public boolean validPalindrome(String s) {
+        int left=0;
+        int right=s.length()-1;
+        while(left<right)
+        {
+            if(s.charAt(left)==s.charAt(right))
+            {
+                left++;
+                right--;
+            }
+
+            else{
+                int L=left+1;
+                int R=right;
+                while(L<R && s.charAt(L)==s.charAt(R))
+                {
+                    L++;
+                    R--;
+                }
+                int L1=left;
+                int R1=right-1;
+                while(L1<R1 && s.charAt(L1)==s.charAt(R1))
+                {
+                    L1++;
+                    R1--;
+                }
+                return L1>=R1 || L>=R;
+                }
+        }
+        return true;
+    }
+}
+
+
+
+
+//Really tough question made me realise the depth of dsa
